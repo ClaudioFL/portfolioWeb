@@ -30,13 +30,13 @@ const Left = styled.div`
     justify-content: center;
   }
 `
-const List = styled.div`
+const List = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
 `
-const ListItem = styled.div`
+const ListItem = styled.li`
   font-size: 90px;
   font-weight: bold;
   cursor: pointer;
@@ -56,7 +56,7 @@ const ListItem = styled.div`
     top: 0;
     left: 0;
     color: pink;
-    width: 0px;
+    width: 0;
     overflow: hidden;
     white-space: nowrap;
   }

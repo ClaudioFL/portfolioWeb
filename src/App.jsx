@@ -17,7 +17,6 @@ const Container = styled.div`
   background: url("./img/bg.jpeg");
   &::-webkit-scrollbar{
     display: none;
-    padding: 0;
   }
   margin: 0;
   padding: 0;
