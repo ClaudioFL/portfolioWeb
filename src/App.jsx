@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Who from "./components/Who";
 import Works from "./components/Works";
 import "./global.css"
+import StarsCanvas from "./components/canvas/Stars";
 
 
 
@@ -14,7 +15,7 @@ const Container = styled.div`
   overflow-y: auto;
   scrollbar-width: none;
   color: white;
-  background: url("./img/bg.jpeg");
+  background: url("./img/bg1.jpg");
   &::-webkit-scrollbar{
     display: none;
   }
@@ -25,6 +26,7 @@ const Container = styled.div`
 function App() {
     return (
         <Container>
+            <StarsCanvas />
             <Hero />
             <Who />
             <Works />

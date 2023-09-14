@@ -12,15 +12,14 @@ const Map = () => {
         <ComposableMap
             projection="geoAzimuthalEqualArea"
             projectionConfig={{
-                rotate: [-10.0, -52.0, 0],
-                center: [-5, -3],
+                rotate: [81.7602544, -27.9944024, 0],
                 scale: 1600
             }}
             style={{width:"100%", height:"100%"}}
         >
             <Geographies
                 geography="/features.json"
-                fill="#2C065D"
+                fill="lightblue"
                 stroke="#FFFFFF"
                 strokeWidth={0.5}
             >
@@ -31,31 +30,17 @@ const Map = () => {
                 }
             </Geographies>
             <Annotation
-                subject={[2.3522, 48.8566]}
-                dx={-90}
-                dy={-30}
+                subject={[30.4382, -84.2806]}
+                dx={-40}  // Adjusted for better positioning
+                dy={-20}  // Adjusted for better positioning
                 connectorProps={{
-                    stroke: "white",
-                    strokeWidth: 2,
+                    stroke: "#FFD700",  // Gold color for the connector line
+                    strokeWidth: 1.5,
                     strokeLinecap: "round"
                 }}
             >
-                <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="white">
-                    {"Paris"}
-                </text>
-            </Annotation>
-            <Annotation
-                subject={[21.01178, 52.22977]}
-                dx={-90}
-                dy={-30}
-                connectorProps={{
-                    stroke: "white",
-                    strokeWidth: 2,
-                    strokeLinecap: "round"
-                }}
-            >
-                <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="white">
-                    {"Warsaw"}
+                <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="#FFD700" style={{ fontWeight: "bold", fontSize: "12px" }}>
+                    {"Tallahassee"}
                 </text>
             </Annotation>
         </ComposableMap>
