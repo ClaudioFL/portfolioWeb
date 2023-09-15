@@ -1,13 +1,57 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const data = [
-    "Web Design",
-    "Development",
-    "Illustration",
-    "Product Design",
-    "Social Media",
+const projectData = [
+    {
+        title: "Project 1",
+        imageUrl: "/path/to/image1.jpg",
+        link: "https://link-to-project1.com"
+    },
+    {
+        title: "Project 2",
+        imageUrl: "/path/to/image2.jpg",
+        link: "https://link-to-project2.com"
+    },
+    // ... add other projects similarly
 ];
+
+const ProjectBox = styled.div`
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    a {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    }
+`;
+
 
 const Section = styled.div`
   height: 100vh;
@@ -81,25 +125,27 @@ const Right = styled.div`
 
 
 const Works = () => {
-    const [work, setWork] = useState("Web Design");
     return (
         <Section>
-          <Container>
-            <Left>
-                <List>
-                    {data.map((item) => (
-                    <ListItem key={item} text={item} onClick={() => setWork(item)}>
-                        {item}
-                    </ListItem>
+            <Container>
+                <Left>
+                    {projectData.map((project) => (
+                        <ProjectBox key={project.title}>
+                            <img src={project.imageUrl} alt={project.title} />
+                            <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                {project.title}
+                            </a>
+                        </ProjectBox>
                     ))}
-                </List>
-            </Left>
-            <Right>
-            </Right>
-          </Container>
+                </Left>
+                <Right>
+                    {/* You can put any additional content or leave it empty */}
+                </Right>
+            </Container>
         </Section>
-    )
-}
+    );
+};
+
 
 export default Works;
 
