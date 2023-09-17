@@ -61,7 +61,7 @@ const Icon = styled.img`
 const Button = styled.button`
   width: 100px;
   padding: 10px;
-  background-color: #5bf5ee;
+  background-color: #da4ea2;
   color: white;
   border: none;
   border-radius: 5px;
@@ -75,10 +75,10 @@ const Navbar = () => {
                 <Links>
                     <Logo src="./img/logo.png" />
                     <List>
-                        <ListItem>Home</ListItem>
-                        <ListItem>Studio</ListItem>
-                        <ListItem>Works</ListItem>
-                        <ListItem>Contact</ListItem>
+                        <ListItem><a href="#home">Home</a></ListItem>
+                        <ListItem><a href="#studio">Studio</a></ListItem>
+                        <ListItem><a href="#works">Works</a></ListItem>
+                        <ListItem><a href="#contact">Contact</a></ListItem>
                     </List>
                 </Links>
                 <Icons>

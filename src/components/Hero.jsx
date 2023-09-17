@@ -119,9 +119,11 @@ const Img = styled.img`
     }
   }
 `;
+<div id="home"> ... </div>
 
 const Hero = () => {
     return (
+        <div id="home">
         <Section>
             <Navbar />
             <Container>
@@ -156,6 +158,7 @@ const Hero = () => {
                 </Right>
             </Container>
         </Section>
+        </div>
     );
 };
 

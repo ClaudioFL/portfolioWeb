@@ -4,7 +4,7 @@ import styled from "styled-components";
 const projectData = [
     {
         title: "Project 1",
-        imageUrl: "/path/to/image1.jpg",
+        imageUrl: "./img/moon.png",
         link: "https://link-to-project1.com"
     },
     {
@@ -126,6 +126,7 @@ const Right = styled.div`
 
 const Works = () => {
     return (
+        <div id="works">
         <Section>
             <Container>
                 <Left>
@@ -143,6 +144,7 @@ const Works = () => {
                 </Right>
             </Container>
         </Section>
+        </div>
     );
 };
 
