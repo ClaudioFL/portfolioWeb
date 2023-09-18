@@ -61,12 +61,24 @@ const Icon = styled.img`
 const Button = styled.button`
   width: 100px;
   padding: 10px;
-  background-color: #da4ea2;
+  background-color: #3efffa;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 `;
+
+const Link = styled.a`
+  text-decoration: none;
+  color: inherit; // or any other color you want
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline; // or any other hover effect you like
+  }
+`;
+
+
 
 const Navbar = () => {
     return (
@@ -75,10 +87,10 @@ const Navbar = () => {
                 <Links>
                     <Logo src="./img/logo.png" />
                     <List>
-                        <ListItem><a href="#home">Home</a></ListItem>
-                        <ListItem><a href="#studio">Studio</a></ListItem>
-                        <ListItem><a href="#works">Works</a></ListItem>
-                        <ListItem><a href="#contact">Contact</a></ListItem>
+                        <ListItem><Link href="#home">Home</Link></ListItem>
+                        <ListItem><Link href="#studio">Studio</Link></ListItem>
+                        <ListItem><Link href="#works">Works</Link></ListItem>
+                        <ListItem><Link href="#contact">Contact</Link></ListItem>
                     </List>
                 </Links>
                 <Icons>
