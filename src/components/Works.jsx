@@ -9,7 +9,17 @@ const projectData = [
     },
     {
         title: "Project 2",
-        imageUrl: "/path/to/image2.jpg",
+        imageUrl: "./img/moon.png",
+        link: "https://link-to-project2.com"
+    },
+    {
+        title: "Project 3",
+        imageUrl: "./img/moon.png",
+        link: "https://link-to-project2.com"
+    },
+    {
+        title: "Project 4",
+        imageUrl: "./img/moon.png",
         link: "https://link-to-project2.com"
     },
     // ... add other projects similarly
@@ -58,78 +68,22 @@ const Section = styled.div`
   scroll-snap-align: center;
   display: flex;
   justify-content: center;
+  align-items: center; // Added this to vertically center the content
 `
+
 const Container = styled.div`
-  width: 1400px;
+  max-width: 1400px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; // Changed from space-between to center
+  flex-wrap: wrap; // Allows wrapping of ProjectBox items if they don't fit in one line
+  gap: 20px; // Provides spacing between ProjectBox items
 `
-const Left = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-
-  @media only screen and (max-width: 768px) {
-    padding: 20px;
-    justify-content: center;
-  }
-`
-const List = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`
-const ListItem = styled.li`
-  font-size: 90px;
-  font-weight: bold;
-  cursor: pointer;
-  color: transparent;
-  -webkit-text-stroke: 1px white;
-  position: relative;
-
-  @media only screen and (max-width: 768px) {
-    font-size: 24px;
-    color: white;
-    <-webkit-text-stroke>: 0px;
-  }
-
-  ::after {
-    content: "${(props) => props.text}";
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: pink;
-    width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  &:hover {
-    ::after {
-      animation: moveText 0.5s linear both;
-
-      @keyframes moveText {
-        to {
-          width: 100%;
-        }
-      }
-    }
-  }
-`
-const Right = styled.div`
-  flex:1;
-`
-
-
-
 
 const Works = () => {
     return (
         <div id="works">
-        <Section>
-            <Container>
-                <Left>
+            <Section>
+                <Container>
                     {projectData.map((project) => (
                         <ProjectBox key={project.title}>
                             <img src={project.imageUrl} alt={project.title} />
@@ -138,16 +92,10 @@ const Works = () => {
                             </a>
                         </ProjectBox>
                     ))}
-                </Left>
-                <Right>
-                    {/* You can put any additional content or leave it empty */}
-                </Right>
-            </Container>
-        </Section>
+                </Container>
+            </Section>
         </div>
     );
 };
 
-
 export default Works;
-

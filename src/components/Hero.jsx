@@ -134,7 +134,7 @@ const Hero = () => {
                         <Subtitle>About Me</Subtitle>
                     </WhatWeDo>
                     <Desc>
-                        we enjoy creating delightful, human-centered digital experiences.
+                        Hello welcome to my portfolio website. Im Claudio born in Brazil im a college student with a passion for technology and problem solving.
                     </Desc>
                     <Button>Learn More</Button>
                 </Left>

@@ -56,7 +56,7 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-  background-color: #da4ea2;
+  background-color: #58fff7;
   color: white;
   border: none;
   font-weight: bold;
@@ -104,7 +104,7 @@ const Contact = () => {
             <Container>
                 <Left>
                     <Form ref={ref} onSubmit={handleSubmit}>
-                        <Title>Contact Us</Title>
+                        <Title>Contact Me</Title>
                         <Input placeholder="Name" name="name" />
                         <Input placeholder="Email" name="email" />
                         <TextArea

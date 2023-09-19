@@ -3,8 +3,8 @@ import Contact from "./components/Contact";
 import Hero from "./components/Hero";
 import Who from "./components/Who";
 import Works from "./components/Works";
+import Resume from "./components/Resume";
 import "./global.css"
-import StarsCanvas from "./components/canvas/Stars";
 
 
 
@@ -26,9 +26,9 @@ const Container = styled.div`
 function App() {
     return (
         <Container>
-            <StarsCanvas />
             <Hero />
-            <Who />
+            <Who/>
+            <Resume />
             <Works />
             <Contact />
         </Container>
