@@ -38,6 +38,8 @@ const ResumeBox = styled.div`
   }
 `;
 
+
+
 const Resume = () => {
     const googleDocsLink = "https://docs.google.com/document/d/DOC_ID_HERE/pub";  // Replace DOC_ID_HERE with your document's ID
 
