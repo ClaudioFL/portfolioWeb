@@ -35,8 +35,9 @@ const Logo = styled.img`
 
 const List = styled.ul`
   display: flex;
-  gap: 20px;
+  gap: 15px;
   list-style: none;
+  list-style-position: initial;
 
   @media only screen and (max-width: 768px) {
     display: none;
@@ -85,11 +86,11 @@ const Navbar = () => {
         <Section>
             <Container>
                 <Links>
-                    <Logo src="" />
                     <List>
                         <ListItem><Link href="#home">Home</Link></ListItem>
                         <ListItem><Link href="#studio">Studio</Link></ListItem>
                         <ListItem><Link href="#works">Works</Link></ListItem>
+                        <ListItem><Link href="#resume">Resume</Link></ListItem>
                         <ListItem><Link href="#contact">Contact</Link></ListItem>
                     </List>
                 </Links>
