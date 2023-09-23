@@ -47,6 +47,7 @@ const Left = styled.div`
 
 const Title = styled.h1`
   font-size: 74px;
+  margin-top: 0; // Add this line
 
   @media only screen and (max-width: 768px) {
     text-align: center;
@@ -119,7 +120,16 @@ const Img = styled.img`
     }
   }
 `;
-<div id="home"> ... </div>
+
+const IntroText = styled.h3`
+  font-size: 24px;
+  margin-bottom: 0px; // Gives some space between the intro text and the title
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+    font-size: 20px; // Adjusts the font size for smaller screens if needed
+  }
+`;
 
 const Hero = () => {
     return (
@@ -128,6 +138,7 @@ const Hero = () => {
             <Navbar />
             <Container>
                 <Left>
+                    <IntroText>Hi, my name is</IntroText>
                     <Title>Claudio Florio</Title>
                     <WhatWeDo>
                         <Line src="./img/line.png" />
