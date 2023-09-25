@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+
 const Section = styled.div`
   display: flex;
   justify-content: center;
@@ -13,9 +14,9 @@ const Section = styled.div`
 const Container = styled.div`
   width: 1400px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align content to the left */
   align-items: center;
-  padding: 10px 0px;
+  padding: 0px 0px;
 
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -26,7 +27,9 @@ const Container = styled.div`
 const Links = styled.div`
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 25px;
+  flex-grow: 1; /* Allow it to grow and occupy the available space */
+
 `;
 
 const Logo = styled.img`

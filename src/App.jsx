@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Who from "./components/Who";
 import Works from "./components/Works";
 import Resume from "./components/Resume";
+import ThreeBackground from './components/ThreeBackground'; // Import the new component
 import "./global.css"
 
 const Container = styled.div`
@@ -14,7 +15,7 @@ const Container = styled.div`
   overflow-y: auto;
   scrollbar-width: none;
   color: white;
-  background: url("./img/bg2.jpg");
+  background: url("./img/bg1.jpg");
   &::-webkit-scrollbar{
     display: none;
   }
