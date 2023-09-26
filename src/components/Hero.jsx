@@ -37,7 +37,7 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 5px;
 
   @media only screen and (max-width: 768px) {
     flex: 1;
@@ -58,6 +58,7 @@ const WhatWeDo = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 5px;
 `;
 
 const Line = styled.img`
@@ -66,11 +67,14 @@ const Line = styled.img`
 
 const Subtitle = styled.h2`
   color: #5bf5ee;
+  margin: 0;
 `;
 
 const Desc = styled.p`
   font-size: 24px;
   color: lightgray;
+  margin-bottom: 5px;
+  margin-top: 0;
   @media only screen and (max-width: 768px) {
     padding: 20px;
     text-align: center;
@@ -157,7 +161,7 @@ const Hero = () => {
                             <directionalLight position={[3, 2, 1]} />
                             <Sphere args={[1, 100, 200]} scale={2.4}>
                                 <MeshDistortMaterial
-                                    color="90fff4"
+                                    color="#5bf5ee"
                                     attach="material"
                                     distort={0.5}
                                     speed={2}

@@ -12,9 +12,9 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  width: 1400px;
+  width: 1400px;  // revert the width back to 1400px
   display: flex;
-  justify-content: flex-start; /* Align content to the left */
+  justify-content: space-between;  // push the children components to the opposite ends
   align-items: center;
   padding: 0px 0px;
 
@@ -28,8 +28,7 @@ const Links = styled.div`
   display: flex;
   align-items: center;
   gap: 25px;
-  flex-grow: 1; /* Allow it to grow and occupy the available space */
-
+  // remove the flex-grow property
 `;
 
 const Logo = styled.img`
@@ -40,6 +39,8 @@ const List = styled.ul`
   display: flex;
   gap: 15px;
   list-style: none;
+  margin: 0;  // reset margin
+  padding: 0;  // reset padding
   list-style-position: initial;
 
   @media only screen and (max-width: 768px) {
@@ -49,6 +50,8 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   cursor: pointer;
+  margin: 0;  // reset margin
+  padding: 0;  // reset padding
 `;
 
 const Icons = styled.div`
