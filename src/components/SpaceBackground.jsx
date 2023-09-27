@@ -21,6 +21,8 @@ const SpaceBackground = () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
         mountRef.current.appendChild(renderer.domElement);
 
+
+
         // Resize listener for responsiveness
         window.addEventListener('resize', () => {
             const width = window.innerWidth;

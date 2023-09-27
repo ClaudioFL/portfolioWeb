@@ -1,10 +1,11 @@
-import React, { Suspense } from "react";
+import React, { useRef, Suspense } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
+import Trigger from 'react-scroll-trigger';
 
-const Section = styled.div`
+const Section = styled.section`
   height: 100vh;
   scroll-snap-align: center;
   display: flex;
@@ -47,7 +48,7 @@ const Left = styled.div`
 
 const Title = styled.h1`
   font-size: 74px;
-  margin-top: 0; // Add this line
+  margin-top: 0;
 
   @media only screen and (max-width: 768px) {
     text-align: center;
@@ -75,6 +76,7 @@ const Desc = styled.p`
   color: lightgray;
   margin-bottom: 5px;
   margin-top: 0;
+
   @media only screen and (max-width: 768px) {
     padding: 20px;
     text-align: center;
@@ -95,6 +97,7 @@ const Button = styled.button`
 const Right = styled.div`
   flex: 3;
   position: relative;
+
   @media only screen and (max-width: 768px) {
     flex: 1;
     width: 100%;
@@ -111,68 +114,79 @@ const Img = styled.img`
   left: 0;
   right: 0;
   margin: auto;
-  animation: animate 2s infinite ease alternate;
 
   @media only screen and (max-width: 768px) {
     width: 300px;
     height: 300px;
   }
-
-  @keyframes animate {
-    to {
-      transform: translateY(20px);
-    }
-  }
 `;
 
 const IntroText = styled.h3`
   font-size: 24px;
-  margin-bottom: 0px; // Gives some space between the intro text and the title
+  margin-bottom: 0px;
 
   @media only screen and (max-width: 768px) {
     text-align: center;
-    font-size: 20px; // Adjusts the font size for smaller screens if needed
+    font-size: 20px;
   }
 `;
 
 const Hero = () => {
+    const titleRef = useRef(null);
+    const descRef = useRef(null);
+    const imgRef = useRef(null);
+
+    const onEnterViewport = (ref) => {
+        ref.current.style.opacity = "1";
+    };
+
+    const onExitViewport = (ref) => {
+        ref.current.style.opacity = "0";
+    };
+
     return (
         <div id="home">
-        <Section>
-            <Navbar />
-            <Container>
-                <Left>
-                    <IntroText>Hi, my name is</IntroText>
-                    <Title>Claudio Florio</Title>
-                    <WhatWeDo>
-                        <Line src="./img/line.png" />
-                        <Subtitle>About Me</Subtitle>
-                    </WhatWeDo>
-                    <Desc>
-                        Hello welcome to my portfolio website. Im Claudio born in Brazil im a college student with a passion for technology and problem solving.
-                    </Desc>
-                    <Button>Learn More</Button>
-                </Left>
-                <Right>
-                    <Canvas>
-                        <Suspense fallback={null}>
-                            <OrbitControls enableZoom={false} />
-                            <ambientLight intensity={1} />
-                            <directionalLight position={[3, 2, 1]} />
-                            <Sphere args={[1, 100, 200]} scale={2.4}>
-                                <MeshDistortMaterial
-                                    color="#5bf5ee"
-                                    attach="material"
-                                    distort={0.5}
-                                    speed={2}
-                                />
-                            </Sphere>
-                        </Suspense>
-                    </Canvas>
-                    <Img src="./img/moon.png" />
-                </Right>
-            </Container>
-        </Section>
+            <Section>
+                <Navbar />
+                <Container>
+                    <Left>
+                        <IntroText>Hi, my name is</IntroText>
+                        <Trigger onEnter={() => onEnterViewport(titleRef)} onExit={() => onExitViewport(titleRef)}>
+                            <Title ref={titleRef} style={{ opacity: 0 }}>Claudio Florio</Title>
+                        </Trigger>
+                        <WhatWeDo>
+                            <Line src="./img/line.png" />
+                            <Subtitle>About Me</Subtitle>
+                        </WhatWeDo>
+                        <Trigger onEnter={() => onEnterViewport(descRef)} onExit={() => onExitViewport(descRef)}>
+                            <Desc ref={descRef} style={{ opacity: 0 }}>
+                                Hello welcome to my portfolio website. Im Claudio born in Brazil im a college student with a passion for technology and problem solving.
+                            </Desc>
+                        </Trigger>
+                        <Button>Learn More</Button>
+                    </Left>
+                    <Right>
+                        <Canvas>
+                            <Suspense fallback={null}>
+                                <OrbitControls enableZoom={false} />
+                                <ambientLight intensity={1} />
+                                <directionalLight position={[3, 2, 1]} />
+                                <Sphere args={[1, 100, 200]} scale={2.4}>
+                                    <MeshDistortMaterial
+                                        color="#5bf5ee"
+                                        attach="material"
+                                        distort={0.5}
+                                        speed={2}
+                                    />
+                                </Sphere>
+                            </Suspense>
+                        </Canvas>
+                        <Trigger onEnter={() => onEnterViewport(imgRef)} onExit={() => onExitViewport(imgRef)}>
+                            <Img ref={imgRef} src="./img/moon.png" style={{ opacity: 0 }} />
+                        </Trigger>
+                    </Right>
+                </Container>
+            </Section>
         </div>
     );
 };
