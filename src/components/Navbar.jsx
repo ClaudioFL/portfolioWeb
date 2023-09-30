@@ -50,6 +50,7 @@ const List = styled.ul`
 
 const ListItem = styled.li`
   cursor: pointer;
+  font-family: 'Roboto', sans-serif;
   margin: 0;  // reset margin
   padding: 0;  // reset padding
 `;
@@ -76,6 +77,7 @@ const Button = styled.button`
 `;
 
 const Link = styled.a`
+  font-family: 'Roboto', sans-serif;
   text-decoration: none;
   color: inherit; // or any other color you want
   cursor: pointer;

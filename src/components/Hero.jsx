@@ -49,6 +49,7 @@ const Left = styled.div`
 const Title = styled.h1`
   font-size: 74px;
   margin-top: 0;
+  font-family: 'Roboto', sans-serif;
 
   @media only screen and (max-width: 768px) {
     text-align: center;
@@ -69,6 +70,8 @@ const Line = styled.img`
 const Subtitle = styled.h2`
   color: #5bf5ee;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
+
 `;
 
 const Desc = styled.p`
@@ -76,6 +79,7 @@ const Desc = styled.p`
   color: lightgray;
   margin-bottom: 5px;
   margin-top: 0;
+  font-family: 'Roboto', sans-serif;
 
   @media only screen and (max-width: 768px) {
     padding: 20px;
