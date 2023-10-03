@@ -1,9 +1,8 @@
-import React, { useRef, Suspense } from "react";
+import React, { useRef, Suspense, useState, useEffect } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
-import Trigger from 'react-scroll-trigger';
 
 const Section = styled.section`
   height: 100vh;
@@ -46,13 +45,27 @@ const Left = styled.div`
   }
 `;
 
+
+
 const Title = styled.h1`
   font-size: 74px;
   margin-top: 0;
   font-family: 'Roboto', sans-serif;
+  transition: opacity 0.5s ease-in-out;
 
   @media only screen and (max-width: 768px) {
     text-align: center;
+  }
+`;
+
+const IntroText = styled.h3`
+  font-size: 24px;
+  margin-bottom: 0;
+  transition: opacity 0.5s ease-in-out;
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+    font-size: 20px;
   }
 `;
 
@@ -71,7 +84,7 @@ const Subtitle = styled.h2`
   color: #5bf5ee;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-
+  transition: opacity 0.5s ease-in-out;
 `;
 
 const Desc = styled.p`
@@ -80,6 +93,7 @@ const Desc = styled.p`
   margin-bottom: 5px;
   margin-top: 0;
   font-family: 'Roboto', sans-serif;
+  transition: opacity 0.5s ease-in-out;
 
   @media only screen and (max-width: 768px) {
     padding: 20px;
@@ -96,6 +110,7 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
 `;
 
 const Right = styled.div`
@@ -125,29 +140,9 @@ const Img = styled.img`
   }
 `;
 
-const IntroText = styled.h3`
-  font-size: 24px;
-  margin-bottom: 0px;
 
-  @media only screen and (max-width: 768px) {
-    text-align: center;
-    font-size: 20px;
-  }
-`;
 
 const Hero = () => {
-    const titleRef = useRef(null);
-    const descRef = useRef(null);
-    const imgRef = useRef(null);
-
-    const onEnterViewport = (ref) => {
-        ref.current.style.opacity = "1";
-    };
-
-    const onExitViewport = (ref) => {
-        ref.current.style.opacity = "0";
-    };
-
     return (
         <div id="home">
             <Section>
@@ -155,18 +150,14 @@ const Hero = () => {
                 <Container>
                     <Left>
                         <IntroText>Hi, my name is</IntroText>
-                        <Trigger onEnter={() => onEnterViewport(titleRef)} onExit={() => onExitViewport(titleRef)}>
-                            <Title ref={titleRef} style={{ opacity: 0 }}>Claudio Florio</Title>
-                        </Trigger>
+                        <Title>Claudio Florio</Title>
                         <WhatWeDo>
                             <Line src="./img/line.png" />
                             <Subtitle>About Me</Subtitle>
                         </WhatWeDo>
-                        <Trigger onEnter={() => onEnterViewport(descRef)} onExit={() => onExitViewport(descRef)}>
-                            <Desc ref={descRef} style={{ opacity: 0 }}>
-                                Hello welcome to my portfolio website. Im Claudio born in Brazil im a college student with a passion for technology and problem solving.
-                            </Desc>
-                        </Trigger>
+                        <Desc>
+                            Hello welcome to my portfolio website. Im Claudio born in Brazil im a college student with a passion for technology and problem solving.
+                        </Desc>
                         <Button>Learn More</Button>
                     </Left>
                     <Right>
@@ -185,9 +176,7 @@ const Hero = () => {
                                 </Sphere>
                             </Suspense>
                         </Canvas>
-                        <Trigger onEnter={() => onEnterViewport(imgRef)} onExit={() => onExitViewport(imgRef)}>
-                            <Img ref={imgRef} src="./img/moon.png" style={{ opacity: 0 }} />
-                        </Trigger>
+                        <Img src="./img/moon.png" />
                     </Right>
                 </Container>
             </Section>
@@ -196,3 +185,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+

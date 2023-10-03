@@ -35,7 +35,6 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 25px;
-
   @media only screen and (max-width: 768px) {
     width: 300px;
   }
@@ -67,7 +66,6 @@ const Button = styled.button`
 
 const Right = styled.div`
   flex: 1;
-
   @media only screen and (max-width: 768px) {
     display: none;
   }
@@ -79,7 +77,6 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         emailjs
             .sendForm(
                 "service_ijylaii",
@@ -98,30 +95,30 @@ const Contact = () => {
                 }
             );
     };
+
     return (
         <div id="contact">
-        <Section>
-            <Container>
-                <Left>
-                    <Form ref={ref} onSubmit={handleSubmit}>
-                        <Title>Contact Me</Title>
-                        <Input placeholder="Name" name="name" />
-                        <Input placeholder="Email" name="email" />
-                        <TextArea
-                            placeholder="Write your message"
-                            name="message"
-                            rows={10}
-                        />
-                        <Button type="submit">Send</Button>
-                        {success &&
-                            "Your message has been sent. We'll get back to you soon :)"}
-                    </Form>
-                </Left>
-                <Right>
-                    <Map />
-                </Right>
-            </Container>
-        </Section>
+            <Section>
+                <Container>
+                    <Left>
+                        <Form ref={ref} onSubmit={handleSubmit}>
+                            <Title>Contact Me</Title>
+                            <Input placeholder="Name" name="name" />
+                            <Input placeholder="Email" name="email" />
+                            <TextArea
+                                placeholder="Write your message"
+                                name="message"
+                                rows={10}
+                            />
+                            <Button type="submit">Send</Button>
+                            {success && "Your message has been sent. We'll get back to you soon :)"}
+                        </Form>
+                    </Left>
+                    <Right>
+                        <Map />
+                    </Right>
+                </Container>
+            </Section>
         </div>
     );
 };

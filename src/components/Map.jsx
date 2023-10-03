@@ -15,7 +15,7 @@ const Map = () => {
                 rotate: [81.7602544, -27.9944024, 0],
                 scale: 1600
             }}
-            style={{width:"100%", height:"100%"}}
+            style={{ width: "100%", height: "100%" }}
         >
             <Geographies
                 geography="/features.json"

@@ -1,13 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
-import styled from "styled-components";
-import Contact from "./components/Contact";
-import Hero from "./components/Hero";
-import Who from "./components/Who";
-import Works from "./components/Works";
-import Resume from "./components/Resume";
-import SpaceBackground from './components/SpaceBackground';
-import "./global.css"
+import styled from 'styled-components';
 
+// Component imports
+import Contact from './components/Contact';
+import Hero from './components/Hero';
+import Who from './components/Who';
+import Works from './components/Works';
+import Resume from './components/Resume';
+import SpaceBackground from './components/SpaceBackground';
+
+// Styles
+import './global.css';
+
+// Styled Components
 const Container = styled.div`
   height: 100vh;
   scroll-snap-type: y mandatory;
@@ -15,25 +20,13 @@ const Container = styled.div`
   overflow-y: auto;
   scrollbar-width: none;
   color: white;
-  background: url("");
-  &::-webkit-scrollbar{
+  &::-webkit-scrollbar {
     display: none;
   }
   margin: 0;
   padding: 0;
 `;
 
-const Flashlight = styled.div`
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  pointer-events: none;
-  display: none;
-  mix-blend-mode: screen;
-  z-index: 1000;
-`;
 
 const SideNav = styled.div`
   position: fixed;
@@ -47,36 +40,31 @@ const SideNav = styled.div`
 const Dot = styled.div`
   width: 10px;
   height: 10px;
-  background-color: ${props => props.active ? "white" : "gray"};
+  background-color: ${props => props.active ? 'white' : 'gray'};
   margin: 5px;
   border-radius: 50%;
   cursor: pointer;
 `;
 
-const SideNavigation = ({ currentSection, setCurrentSection }) => {
-    return (
-        <SideNav>
-            {[...Array(5)].map((_, index) => (
-                <Dot
-                    key={index}
-                    active={currentSection === index}
-                    onClick={() => setCurrentSection(index)}
-                />
-            ))}
-        </SideNav>
-    );
-};
+
+// Functional Components
+const SideNavigation = ({ currentSection, setCurrentSection }) => (
+    <SideNav>
+        {[...Array(5)].map((_, index) => (
+            <Dot
+                key={index}
+                active={currentSection === index}
+                onClick={() => setCurrentSection(index)}
+            />
+        ))}
+    </SideNav>
+);
+
 
 function App() {
-    const flashlightRef = useRef(null);
     const containerRef = useRef(null);
     const [currentSection, setCurrentSection] = useState(0);
     const [isScrolling, setIsScrolling] = useState(false);
-
-    // Flashlight effect
-    useEffect(() => {
-        // ... [Your flashlight effect remains unchanged]
-    }, []);
 
     // Scroll lock mechanism
     useEffect(() => {
@@ -115,8 +103,7 @@ function App() {
     return (
         <Container ref={containerRef}>
             <SpaceBackground />
-            <Flashlight ref={flashlightRef} id="flashlight" />
-            <Hero />
+            <Hero currentSection={currentSection} />
             <Who />
             <Resume />
             <Works />

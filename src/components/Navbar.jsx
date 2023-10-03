@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-
 const Section = styled.div`
   display: flex;
   justify-content: center;
@@ -12,9 +11,9 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  width: 1400px;  // revert the width back to 1400px
+  width: 1400px;
   display: flex;
-  justify-content: space-between;  // push the children components to the opposite ends
+  justify-content: space-between;
   align-items: center;
   padding: 0px 0px;
 
@@ -28,7 +27,6 @@ const Links = styled.div`
   display: flex;
   align-items: center;
   gap: 25px;
-  // remove the flex-grow property
 `;
 
 const Logo = styled.img`
@@ -39,9 +37,8 @@ const List = styled.ul`
   display: flex;
   gap: 15px;
   list-style: none;
-  margin: 0;  // reset margin
-  padding: 0;  // reset padding
-  list-style-position: initial;
+  margin: 0;
+  padding: 0;
 
   @media only screen and (max-width: 768px) {
     display: none;
@@ -51,8 +48,8 @@ const List = styled.ul`
 const ListItem = styled.li`
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
-  margin: 0;  // reset margin
-  padding: 0;  // reset padding
+  margin: 0;
+  padding: 0;
 `;
 
 const Icons = styled.div`
@@ -79,15 +76,13 @@ const Button = styled.button`
 const Link = styled.a`
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
-  color: inherit; // or any other color you want
+  color: inherit;
   cursor: pointer;
 
   &:hover {
-    text-decoration: underline; // or any other hover effect you like
+    text-decoration: underline;
   }
 `;
-
-
 
 const Navbar = () => {
     return (
@@ -103,7 +98,6 @@ const Navbar = () => {
                     </List>
                 </Links>
                 <Icons>
-                    {/* Changed the image due to copyright problems */}
                     <Icon src="./img/search.png" />
                     <Button>Hire Now</Button>
                 </Icons>
