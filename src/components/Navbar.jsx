@@ -58,10 +58,12 @@ const Icons = styled.div`
   gap: 20px;
 `;
 
+/*
 const Icon = styled.img`
   width: 20px;
   cursor: pointer;
 `;
+
 
 const Button = styled.button`
   width: 100px;
@@ -71,7 +73,7 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-`;
+`; */
 
 const Link = styled.a`
   font-family: 'Roboto', sans-serif;
@@ -98,8 +100,6 @@ const Navbar = () => {
                     </List>
                 </Links>
                 <Icons>
-                    <Icon src="./img/search.png" />
-                    <Button>Hire Now</Button>
                 </Icons>
             </Container>
         </Section>
