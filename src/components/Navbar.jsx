@@ -92,8 +92,8 @@ const Navbar = () => {
                     <List>
                         <ListItem><Link href="#home">Home</Link></ListItem>
                         <ListItem><Link href="#studio">Studio</Link></ListItem>
-                        <ListItem><Link href="#works">Works</Link></ListItem>
                         <ListItem><Link href="#resume">Resume</Link></ListItem>
+                        <ListItem><Link href="#works">Works</Link></ListItem>
                         <ListItem><Link href="#contact">Contact</Link></ListItem>
                     </List>
                 </Links>
