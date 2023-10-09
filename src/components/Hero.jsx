@@ -81,7 +81,7 @@ const Line = styled.img`
 `;
 
 const Subtitle = styled.h2`
-  color: #5bf5ee;
+  color: #0083ff;
   margin: 0;
   font-family: 'Roboto', sans-serif;
   transition: opacity 0.5s ease-in-out;

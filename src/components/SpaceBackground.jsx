@@ -54,6 +54,7 @@ const SpaceBackground = () => {
             vertices.push(x, y, z);
             sizes.push(0.1 + Math.random() * 0.2);
         }
+
         starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
         starsGeometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
         const starsMaterial = new THREE.PointsMaterial({ color: 0xFFFFFF, sizeAttenuation: true });
