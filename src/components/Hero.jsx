@@ -81,7 +81,7 @@ const Line = styled.img`
 `;
 
 const Subtitle = styled.h2`
-  color: #0083ff;
+  color: #0066ff;
   margin: 0;
   font-family: 'Roboto', sans-serif;
   transition: opacity 0.5s ease-in-out;
@@ -102,7 +102,7 @@ const Desc = styled.p`
 `;
 
 const Button = styled.button`
-  background-color: #5bf5ee;
+  background-color: #0066ff;
   color: white;
   font-weight: 500;
   width: 100px;
@@ -168,7 +168,7 @@ const Hero = () => {
                                 <directionalLight position={[3, 2, 1]} />
                                 <Sphere args={[1, 100, 200]} scale={2.4}>
                                     <MeshDistortMaterial
-                                        color="#5bf5ee"
+                                        color="708181FF"
                                         attach="material"
                                         distort={0.5}
                                         speed={2}
